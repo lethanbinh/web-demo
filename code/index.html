@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../assess/fontawesome-free-6.0.0-web/css/all.css">
+    <title>Form sign in</title>
+</head>
+<body>
+
+    <div class="all">
+        <div class="background-image">
+            <img src="../assess/background image.svg" alt="">
+        </div>
+
+
+        <form id="form-1" action="POST">
+            <h1 class="form--title text-center">Create Account</h1>
+
+            <div class="form--group">
+                <label for="name" class="form--label">Full Name</label>
+                <input rules="required" class="form--input" type="text" id="name" name="name" placeholder="EX: Lê Thanh Bình">
+                <span class="form--message"></span>
+            </div>
+
+            <div class="form--group">
+                <label for="email" class="form--label">Email</label>
+                <input rules="required|email" class="form--input" type="email" id="email" name="email" placeholder="EX: lethanhbinh6122003@gmail.com">
+                <span class="form--message"></span>
+            </div>
+
+            <div class="form--group">
+                <label for="password" class="form--label">Password</label>
+                <input rules="required|min:6" class="form--input" type="password" id="password" name="min" placeholder="binhlt123">
+                <span class="form--message"></span>
+            </div>
+
+            <div class="form--group">
+                <label for="password--confirmation" class="form--label">Password Confirmation</label>
+                <input rules="required|confirm" class="form--input" type="password" id="password--confirmation" name="confirm" placeholder="EX: binhlt123">
+                <span class="form--message"></span>
+            </div>
+
+            <div class="form--group">
+                <label for="gender" class="form--label">Gender</label>
+                <select class="form--input" name="gender" rules="required" id="gender">
+                    <option value="">--Choose your gender--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select>
+                <span class="form--message"></span>
+            </div>
+
+            <div class="form--group">
+                <label for="Province" class="form--label">Where do you live</label>
+                <select class="form--input" name="province" rules="required" id="Province">
+                    <option value="">--Choose your place</option>
+                    <option value="HCM">HCM city</option>
+                    <option value="HN">HN city</option>
+                    <option value="DN">DN city</option>
+                </select>
+                <span class="form--message"></span>
+            </div>
+
+        <button class="submit text-center text-white">
+            Sign in
+        </button>
+
+        <p class="desc text-center">Everyone have an account <a href="#">Sign Up</a></p>
+        </form>
+        
+    </div>
+    <script src="./3angle.js">
+        
+    </script>
+
+    <script>
+
+        var form = new validator('#form-1')
+
+        form.onSubmit = function (data) {
+            console.log(data)
+        }
+
+    </script>
+
+
+</body>
+</html>
